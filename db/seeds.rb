@@ -26,18 +26,27 @@ puts parsed[0]["file_value"]
 
 #puts jsonFile
 
-	# t.text    "game",              limit: 255
- #    t.text    "name",              limit: 255
- #    t.text    "aliases",           limit: 255
- #    t.boolean "is_utility"
- #    t.integer "category",          limit: 2
- #    t.boolean "has_adult_content"
- #    t.integer "nm_id",             limit: 4
- #    t.integer "ws_id",             limit: 4
- #    t.integer "ll_id",             limit: 4
+# create_table "mods", primary_key: "mod_id", force: :cascade do |t|
+#     t.text    "game",              limit: 255
+#     t.text    "name",              limit: 255
+#     t.text    "aliases",           limit: 255
+#     t.boolean "is_utility"
+#     t.integer "category",          limit: 2
+#     t.boolean "has_adult_content"
+#     t.integer "nm_id",             limit: 4
+#     t.integer "ws_id",             limit: 4
+#     t.integer "ll_id",             limit: 4
+#   end
 
 
-4.times do |n|
+# create_table "mod_versions", primary_key: "mv_id", force: :cascade do |t|
+#     t.integer "mod_id",    limit: 4
+#     t.date    "released"
+#     t.boolean "obsolete"
+#     t.boolean "dangerous"
+#   end
+
+99.times do |n|
   #name  = FFaker::Name.last_name,
   # email = "example-#{n+1}@railstutorial.org"
   # password = "password"
@@ -45,13 +54,21 @@ puts parsed[0]["file_value"]
   file_name = parsed[n]["file_value"]
   nm_link = parsed[n]["file_link"]
   rand_nm_id = /\d+/.match(nm_link)
-  # Mod.create!( mod_id: n,
-  # 			 game: "Skyrim",
-  # 			 name:  file_name,
-  #              is_utility: false,
-  #              category: rand_category,
-  #              has_adult_content: false,
-  #              nm_id: rand_nm_id
-  #            )
-end
+	# Mod.create!( mod_id: n,
+	# 			 game: "Skyrim",
+	# 			 name:  file_name,
+	#              is_utility: false,
+	#              category: rand_category,
+	#              has_adult_content: false,
+	#              nm_id: rand_nm_id
+	#            )
+
+	# Mod_Version.create!(	mv_id: n,
+	# 						mod_id: n,
+	# 						released: Date.new()
+	#
+	# 						
+	#		)
+	# end
+
 
